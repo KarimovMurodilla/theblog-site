@@ -46,5 +46,5 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
 
 # Heroku Settings
-django_on_heroku.settings(locals())
+django_on_heroku.settings(locals(), staticfiles=False)
 del DATABASES['default']['OPTIONS']['sslmode']
